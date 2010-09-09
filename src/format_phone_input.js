@@ -3,11 +3,18 @@
   function format(e) {
     var input = $(this)
     var digits = input.val().replace(/[^\d]/g, '');
-
-    console.info(e);
-
-    if (e.which == 8) {
+    
+    if (e.which == 8 && digits.length <= 3) {
       return;
+    }
+    
+    if (e.ctrlKey || e.shiftKey || e.metaKey) {
+      return;
+    }
+
+    if (e.which == 8 && digits.length > 3) {
+      input.val(digits.substring(0, digits.length - 1));
+      input.trigger('keydown');
     }
 
     if (digits.length < 3) {
@@ -27,11 +34,11 @@
       return input.val('(' + areaCode + ') ' + prefix + '-' + rest);
     }
 
-    return false;
+    return;
   }
 
   $.fn.formatsPhone = function() {
-    this.bind('keypress', format);
+    this.bind('keydown', format);
     this.attr('maxlength', '14');
   };
 })(jQuery);
