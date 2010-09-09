@@ -9,7 +9,7 @@
     if (e.which == 8) {
       return;
     }
-    
+
     if (digits.length < 3) {
       return;
     }
@@ -26,7 +26,7 @@
       var rest = digits.substring(6, digits.length)
       return input.val('(' + areaCode + ') ' + prefix + '-' + rest);
     }
-    
+
     return false;
   }
 

@@ -32,7 +32,7 @@ Screw.Unit(function() {
       input.trigger('keypress');
       expect(input.val()).to(equal, '555-1');
     });
-    
+
     it("inserts a dash after 3 digits before the 4th and 5th", function() {
       input.val('55512');
       input.trigger('keypress');
@@ -44,31 +44,31 @@ Screw.Unit(function() {
       input.trigger('keypress');
       expect(input.val()).to(equal, '555-123');
     });
-    
+
     it("starts parenthesizing at 7th digits", function() {
       input.val('5551234');
       input.trigger('keypress');
       expect(input.val()).to(equal, '(555) 123-4');
     });
-    
+
     it("begins parenthesizing at 8 digits", function() {
       input.val('55512345');
       input.trigger('keypress');
       expect(input.val()).to(equal, '(555) 123-45')
     });
-    
+
     it("keeps parenthesizing at 9 digits", function() {
       input.val('555123456');
       input.trigger('keypress');
       expect(input.val()).to(equal, '(555) 123-456')
     });
-    
+
     it("keeps parenthesizing at 10 digits", function() {
       input.val('5551234567');
       input.trigger('keypress');
       expect(input.val()).to(equal, '(555) 123-4567')
     });
-    
+
     it("stops formatting after 10 digits", function() {
       input.val('55512345678');
       input.trigger('keypress');
