@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>jQuery Format Phone Example</title>
+    <style type="text/css" media="screen">
+      html, body {
+        background: #FBFAEF;
+        font-family: Georgia;
+        text-align: center;
+      }
+      
+      input {
+        font-size: 40px;
+        padding: 10px;
+        font-family: Georgia;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+    <script src="/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/jquery-format-phone/src/format_phone_input.js" type="text/javascript"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        $('input[type="text"]').formatsPhone();
+      });
+    </script>
+  </head>
+  <body>
+    <h1>jQuery Format Phone Example</h1>
+    <input type="text" name="phone" value="" id="phone" autofocus>
+  </body>
+</html>
